@@ -1,0 +1,471 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/css" id="operaUserStyle"></style>
+    <link rel="stylesheet" href="form.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style data-emotion="cosmos-global-global" data-s=""></style>
+    <style data-emotion="cosmos-global-global" data-s=""></style>
+    <style data-emotion="cosmos-global-global" data-s=""></style>
+  </head>
+  <body>
+    <form id="report-form">
+      <div class="container mx-auto px-4 py-10 max-w-4xl">
+        <div class="report-container p-8 mb-10">
+          <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-purple-700 mb-2">
+              Social Media Growth
+            </h1>
+            <h2 class="text-xl text-pink-500">Monthly Report</h2>
+            <div class="flex justify-center mt-4 space-x-2">
+              <span class="emoji-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 text-pink-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z"
+                  />
+                </svg>
+              </span>
+              <span class="emoji-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 text-pink-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                  />
+                </svg>
+              </span>
+              <span class="emoji-icon"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 text-pink-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+                  />
+                </svg>
+              </span>
+              <span class="emoji-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 text-pink-500"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <!-- Month Selection -->
+          <div class="mb-8">
+            <label class="block mb-2 font-semibold">
+              <span class="emoji-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+                  />
+                </svg>
+              </span>
+              <span class="section-title">Report Month</span>
+            </label>
+            <div class="flex space-x-4">
+              <select
+                id="month"
+                name="month"
+                class="cute-input px-4 py-3 w-1/2"
+              >
+                <option value="">Select Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+              <input
+                name="year"
+                type="number"
+                id="year"
+                placeholder="Year (e.g., 2025)"
+                class="cute-input px-4 py-3 w-1/2"
+                min="2020"
+                max="2030"
+              />
+            </div>
+          </div>
+
+          <!-- Platform Stats -->
+          <div class="mb-8">
+            <label class="block mb-4 font-semibold">
+              <span class="emoji-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"
+                  />
+                </svg>
+              </span>
+              <span class="section-title">Platform Statistics</span>
+            </label>
+
+            <!-- Instagram -->
+            <div
+              class="platform-card bg-gradient-to-r from-purple-50 to-pink-50 p-5 mb-4"
+            >
+              <div class="flex items-center mb-3">
+                <span class="emoji-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 text-pink-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
+                    />
+                  </svg>
+                </span>
+                <h3 class="font-bold text-lg">Instagram</h3>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label class="block text-sm mb-1">Followers</label>
+                  <input
+                    name="instagram-followers"
+                    type="number"
+                    class="cute-input px-3 py-2 w-full"
+                    placeholder="Total followers"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm mb-1">Engagement Rate (%)</label>
+                  <input
+                    name="instagram-engagement"
+                    type="number"
+                    step="0.01"
+                    class="cute-input px-3 py-2 w-full"
+                    placeholder="e.g., 3.5"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm mb-1">Post Reach</label>
+                  <input
+                    name="instagram-reach"
+                    type="number"
+                    class="cute-input px-3 py-2 w-full"
+                    placeholder="Average reach"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- TikTok -->
+            <div
+              class="platform-card bg-gradient-to-r from-blue-50 to-teal-50 p-5 mb-4"
+            >
+              <div class="flex items-center mb-3">
+                <span class="emoji-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 text-teal-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z"
+                    />
+                  </svg>
+                </span>
+                <h3 class="font-bold text-lg">TikTok</h3>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label class="block text-sm mb-1">Followers</label>
+                  <input
+                    name="tiktok-followers"
+                    type="number"
+                    class="cute-input px-3 py-2 w-full"
+                    placeholder="Total followers"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm mb-1">Engagement Rate (%)</label>
+                  <input
+                    name="tiktok-engagement"
+                    type="number"
+                    step="0.01"
+                    class="cute-input px-3 py-2 w-full"
+                    placeholder="e.g., 5.2"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm mb-1">Video Views</label>
+                  <input
+                    name="tiktok-views"
+                    type="number"
+                    class="cute-input px-3 py-2 w-full"
+                    placeholder="Average views"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- VGen -->
+            <div
+              class="platform-card bg-gradient-to-r from-green-50 to-yellow-50 p-5"
+            >
+              <div class="flex items-center mb-3">
+                <span class="emoji-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6 text-green-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+                </span>
+                <h3 class="font-bold text-lg">VGen</h3>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label class="block text-sm mb-1">Followers</label>
+                  <input
+                    name="vgen-followers"
+                    type="number"
+                    class="cute-input px-3 py-2 w-full"
+                    placeholder="Total followers"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm mb-1">Engagement Rate (%)</label>
+                  <input
+                    name="vgen-engagement"
+                    type="number"
+                    step="0.01"
+                    class="cute-input px-3 py-2 w-full"
+                    placeholder="e.g., 4.7"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm mb-1">Content Reach</label>
+                  <input
+                    name="vgen-reach"
+                    type="number"
+                    class="cute-input px-3 py-2 w-full"
+                    placeholder="Average reach"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top Performing Content -->
+          <div class="mb-8">
+            <label class="block mb-4 font-semibold">
+              <span class="emoji-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0"
+                  />
+                </svg>
+              </span>
+              <span class="section-title">Top Performing Content</span>
+            </label>
+
+            <div id="content-container">
+              <div class="content-card p-4 mb-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
+                  <div>
+                    <label class="block text-sm mb-1">Platform</label>
+                    <select
+                      name="content-platform"
+                      class="cute-input px-3 py-2 w-full"
+                    >
+                      <option value="">Select platform</option>
+                      <option value="Instagram">Instagram</option>
+                      <option value="TikTok">TikTok</option>
+                      <option value="VGen">VGen</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm mb-1">Content Type</label>
+                    <input
+                      name="content-type"
+                      type="text"
+                      class="cute-input px-3 py-2 w-full"
+                      placeholder="e.g., Reel, Post, Video"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm mb-1">Engagement</label>
+                    <input
+                      name="content-engagement"
+                      type="number"
+                      class="cute-input px-3 py-2 w-full"
+                      placeholder="Total engagement"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm mb-1">Content Description</label>
+                  <textarea
+                    name="content-description"
+                    class="cute-input px-3 py-2 w-full"
+                    rows="2"
+                    placeholder="Brief description of the content"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <button
+              id="add-content"
+              class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full flex items-center mx-auto hover:bg-purple-200 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-1"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Add Another Content
+            </button>
+          </div>
+
+          <!-- Recommendations -->
+          <div class="mb-8">
+            <label class="block mb-4 font-semibold">
+              <span class="emoji-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6 text-yellow-600"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+                  />
+                </svg>
+              </span>
+              <span class="section-title">Recommendations &amp; Notes</span>
+            </label>
+            <textarea
+              name="recommendations"
+              class="cute-input px-4 py-3 w-full"
+              rows="5"
+              placeholder="Add your recommendations, insights, or notes for next month's strategy..."
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button
+              id="save-report"
+              type="submit"
+              class="cute-button text-white font-bold px-8 py-3"
+            >
+              Save Report
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

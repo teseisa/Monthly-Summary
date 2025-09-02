@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- <title>Social Media Growth Report</title> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="dashboard.js" defer></script>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg my-10">
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-8 border-b pb-4">
+        <div>
+          <h1 class="text-2xl font-bold text-gray-800">
+            Social Media Growth Report
+          </h1>
+          <p class="text-gray-500">August 2023</p>
+        </div>
+        <div class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium">
+          Monthly Summary
+        </div>
+      </div>
+
+      <!-- Key Metrics -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-indigo-50 p-4 rounded-lg">
+          <div class="flex justify-between items-center">
+            <span class="text-indigo-800 font-medium">Total Followers</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-indigo-600"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+              ></path>
+            </svg>
+          </div>
+          <div class="mt-2">
+            <span class="text-2xl font-bold">109</span>
+            <span class="ml-2 text-sm growth-positive">+12.4%</span>
+          </div>
+          <button
+            class="toggle-btn mt-3 text-xs px-3 py-1 rounded border border-indigo-300 text-indigo-600 w-full active"
+            data-target="followers-comparison"
+          >
+            Show Comparison
+          </button>
+          <div
+            class="comparison-data bg-white rounded text-sm show"
+            id="followers-comparison"
+          >
+            <div class="flex justify-between mb-1">
+              <span>July 2023:</span>
+              <span>21,870</span>
+            </div>
+            <div class="flex justify-between mb-1">
+              <span>June 2023:</span>
+              <span>19,450</span>
+            </div>
+            <div class="h-24 mt-2">
+              <canvas
+                id="followersChart"
+                style="
+                  display: block;
+                  box-sizing: border-box;
+                  height: 96px;
+                  width: 606px;
+                "
+                width="606"
+                height="96"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="bg-purple-50 p-4 rounded-lg">
+          <div class="flex justify-between items-center">
+            <span class="text-purple-800 font-medium">Engagement Rate</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-purple-600"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <div class="mt-2">
+            <span class="text-2xl font-bold">5.8%</span>
+            <span class="ml-2 text-sm growth-positive">+0.7%</span>
+          </div>
+          <button
+            class="toggle-btn mt-3 text-xs px-3 py-1 rounded border border-purple-300 text-purple-600 w-full"
+            data-target="engagement-comparison"
+          >
+            Show Comparison
+          </button>
+          <div
+            class="comparison-data bg-white rounded text-sm"
+            id="engagement-comparison"
+          >
+            <div class="flex justify-between mb-1">
+              <span>July 2023:</span>
+              <span>5.1%</span>
+            </div>
+            <div class="flex justify-between mb-1">
+              <span>June 2023:</span>
+              <span>4.8%</span>
+            </div>
+            <div class="h-24 mt-2">
+              <canvas
+                id="engagementChart"
+                style="
+                  display: block;
+                  box-sizing: border-box;
+                  height: 96px;
+                  width: 606px;
+                "
+                width="606"
+                height="96"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="bg-rose-50 p-4 rounded-lg">
+          <div class="flex justify-between items-center">
+            <span class="text-rose-800 font-medium">Post Reach</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-rose-600"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+              <path
+                fill-rule="evenodd"
+                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <div class="mt-2">
+            <span class="text-2xl font-bold">156.3K</span>
+            <span class="ml-2 text-sm growth-positive">+23.5%</span>
+          </div>
+          <button
+            class="toggle-btn mt-3 text-xs px-3 py-1 rounded border border-rose-300 text-rose-600 w-full"
+            data-target="reach-comparison"
+          >
+            Show Comparison
+          </button>
+          <div
+            class="comparison-data bg-white rounded text-sm"
+            id="reach-comparison"
+          >
+            <div class="flex justify-between mb-1">
+              <span>July 2023:</span>
+              <span>126.5K</span>
+            </div>
+            <div class="flex justify-between mb-1">
+              <span>June 2023:</span>
+              <span>98.2K</span>
+            </div>
+            <div class="h-24 mt-2">
+              <canvas
+                id="reachChart"
+                style="
+                  display: block;
+                  box-sizing: border-box;
+                  height: 96px;
+                  width: 606px;
+                "
+                width="606"
+                height="96"
+              ></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform Performance -->
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-semibold text-gray-800">
+            Platform Performance
+          </h2>
+          <div class="flex space-x-2">
+            <button
+              class="month-toggle px-3 py-1 text-sm rounded bg-indigo-600 text-white"
+              data-month="current"
+            >
+              August
+            </button>
+            <button
+              class="month-toggle px-3 py-1 text-sm rounded bg-gray-200"
+              data-month="previous"
+            >
+              July
+            </button>
+          </div>
+        </div>
+        <div class="space-y-4" id="current-month-data">
+          <div id="social-media-bars">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium text-gray-700">Instagram</span>
+              <span class="text-sm text-gray-500">12.4K followers (+8.2%)</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div
+                class="chart-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2.5 rounded-full"
+                style="width: 75%"
+              ></div>
+            </div>
+          </div>
+          <div id="social-media-bars">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium text-gray-700">TikTok</span>
+              <span class="text-sm text-gray-500">8.7K followers (+15.3%)</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div
+                class="chart-bar bg-gradient-to-r from-gray-400 to-black h-2.5 rounded-full"
+                style="width: 62%"
+              ></div>
+            </div>
+          </div>
+          <div id="social-media-bars">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium text-gray-700">VGen</span>
+              <span class="text-sm text-gray-500">3.5K followers (+21.7%)</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div
+                class="chart-bar bg-gradient-to-r from-green-400 to-emerald-500 h-2.5 rounded-full"
+                style="width: 45%"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4 hidden" id="previous-month-data">
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-medium text-gray-700">Instagram</span>
+              <span class="text-sm text-gray-500">11.5K followers (+6.5%)</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div
+                class="chart-bar bg-gradient-to-r from-purple-500 to-pink-500 h-2.5 rounded-full"
+                style="width: 70%"
+              ></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-medium text-gray-700">Twitter</span>
+              <span class="text-sm text-gray-500">7.5K followers (+12.1%)</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div
+                class="chart-bar bg-gradient-to-r from-cyan-500 to-blue-500 h-2.5 rounded-full"
+                style="width: 55%"
+              ></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="font-medium text-gray-700">LinkedIn</span>
+              <span class="text-sm text-gray-500">2.9K followers (+15.2%)</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div
+                class="chart-bar bg-gradient-to-r from-blue-600 to-indigo-700 h-2.5 rounded-full"
+                style="width: 38%"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Performing Content -->
+      <div class="mb-8">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">
+          Top Performing Content
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <div class="flex items-center mb-2">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <span class="ml-2 font-medium">Instagram Post</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-2">
+              "Behind the scenes at our summer photoshoot"
+            </p>
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>5.2K likes</span>
+              <span>432 comments</span>
+              <span>87 shares</span>
+            </div>
+            <button
+              class="toggle-btn mt-3 text-xs px-3 py-1 rounded border border-gray-300 text-gray-600 w-full"
+              data-target="post1-comparison"
+            >
+              Compare to Last Month
+            </button>
+            <div
+              class="comparison-data mt-2 bg-gray-50 rounded p-2 text-xs"
+              id="post1-comparison"
+            >
+              <p class="font-medium">July's Top Post:</p>
+              <p class="text-gray-600">"New product launch teaser"</p>
+              <div class="flex justify-between mt-1 text-gray-500">
+                <span>4.1K likes</span>
+                <span>287 comments</span>
+                <span>62 shares</span>
+              </div>
+              <div class="mt-2 text-xs text-indigo-600">
+                +26.8% engagement improvement
+              </div>
+            </div>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <div class="flex items-center mb-2">
+              <div
+                class="w-10 h-10 rounded-full flex items-center justify-center text-white"
+                style="
+                  background: linear-gradient(90deg, #25f4ee 0%, #fe2c55 100%);
+                "
+              >
+                <img
+                  src="https://simpleicons.org/icons/tiktok.svg"
+                  alt="TikTok"
+                  class="h-4 w-4"
+                />
+              </div>
+              <span class="ml-2 font-medium">TikTok Post</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-2">
+              "10 tips for growing your audience organically"
+            </p>
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>3.8K likes</span>
+              <span>215 replies</span>
+              <span>1.2K retweets</span>
+            </div>
+            <button
+              class="toggle-btn mt-3 text-xs px-3 py-1 rounded border border-gray-300 text-gray-600 w-full"
+              data-target="post2-comparison"
+            >
+              Compare to Last Month
+            </button>
+            <div
+              class="comparison-data mt-2 bg-gray-50 rounded p-2 text-xs"
+              id="post2-comparison"
+            >
+              <p class="font-medium">July's Top Tweet:</p>
+              <p class="text-gray-600">"Industry trends for Q3 2023"</p>
+              <div class="flex justify-between mt-1 text-gray-500">
+                <span>2.9K likes</span>
+                <span>178 replies</span>
+                <span>850 retweets</span>
+              </div>
+              <div class="mt-2 text-xs text-indigo-600">
+                +31.0% engagement improvement
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monthly Growth Comparison -->
+      <div class="mb-8">
+        <h2 class="text-lg font-semibold text-gray-800 mb-4">
+          Monthly Growth Comparison
+        </h2>
+        <div class="bg-gray-50 rounded-lg p-4">
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-full md:w-1/3 px-2 mb-4 md:mb-0">
+              <div class="bg-white p-3 rounded shadow-sm">
+                <h3 class="text-sm font-medium text-gray-700 mb-2">
+                  Follower Growth
+                </h3>
+                <div class="h-32">
+                  <canvas
+                    id="followerGrowthChart"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 128px;
+                      width: 598px;
+                    "
+                    width="598"
+                    height="128"
+                  ></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 px-2 mb-4 md:mb-0">
+              <div class="bg-white p-3 rounded shadow-sm">
+                <h3 class="text-sm font-medium text-gray-700 mb-2">
+                  Engagement Rate
+                </h3>
+                <div class="h-32">
+                  <canvas
+                    id="engagementRateChart"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 128px;
+                      width: 598px;
+                    "
+                    width="598"
+                    height="128"
+                  ></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 px-2">
+              <div class="bg-white p-3 rounded shadow-sm">
+                <h3 class="text-sm font-medium text-gray-700 mb-2">
+                  Post Reach
+                </h3>
+                <div class="h-32">
+                  <canvas
+                    id="postReachChart"
+                    style="
+                      display: block;
+                      box-sizing: border-box;
+                      height: 128px;
+                      width: 598px;
+                    "
+                    width="598"
+                    height="128"
+                  ></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendations -->
+      <div
+        class="bg-gradient-to-r from-pink-100 via-pink-50 to-purple-100 p-4 rounded-lg"
+      >
+        <h2 class="text-lg font-semibold text-gray-800 mb-2">
+          Recommendations
+        </h2>
+        <ul class="list-disc pl-5 text-gray-700 text-sm space-y-1">
+          <li>
+            Increase posting frequency on Instagram to 5x weekly (up from 3x in
+            July)
+          </li>
+          <li>Engage more with industry influencers on Twitter</li>
+          <li>
+            Create more behind-the-scenes content (highest engagement this
+            month)
+          </li>
+          <li>
+            Test video content on LinkedIn to improve reach (31% higher
+            engagement than static posts)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
